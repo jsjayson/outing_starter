@@ -105,7 +105,7 @@ class DateCalculator(telepot.helper.InlineUserHandler,
             inline_message_id = msg['inline_message_id']
             suggested_date = msg['result_id']
             self._ballots[inline_message_id] = {}
-            self.scheduler.event_later(3600, ('_expired', {'seconds': 3600,
+            self.scheduler.event_later(20, ('_expired', {'seconds': 20,
                                                          'inline_message_id': inline_message_id,
                                                          'date': suggested_date}))
 
